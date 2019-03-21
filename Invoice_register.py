@@ -1,3 +1,6 @@
+
+#用于读取开票申请表并自动形成开票信息登记表
+
 import xlwings as  xw
 import os
 import re

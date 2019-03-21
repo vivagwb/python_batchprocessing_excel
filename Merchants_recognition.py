@@ -1,3 +1,5 @@
+#用于识别该商户是否有开票申请表模板
+
 import os
 
 
@@ -47,5 +49,5 @@ for name in invoicelist:
         #print(name+"该商户本月无交易")
         template_1.append(name)
 
-print('该商户伍交易：\n')
+print('该商户无交易：\n')
 print(template_1)

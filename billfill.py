@@ -1,3 +1,6 @@
+
+#用于读取对账单账单金额并填入开票登记表中
+
 import xlwings as  xw
 import os
 import re

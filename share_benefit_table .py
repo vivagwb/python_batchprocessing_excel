@@ -1,3 +1,6 @@
+#用于读取对账单生成分润对账单
+
+
 import xlwings as  xw
 import os
 
