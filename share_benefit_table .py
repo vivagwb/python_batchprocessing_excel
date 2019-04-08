@@ -7,8 +7,8 @@ import os
 import time
 
 
-billpath=r'E:\新网工作\支付工作\支付收费对账单\2019年2月对账单\存管2月对账单'
-fillpath=r'E:\新网工作\支付工作\支付收费对账单\2019年2月对账单\2019年2月懒猫对账模板.xlsx'
+billpath=r'C:\Users\Administrator\Desktop\存管2月对账单\副本'
+fillpath=r'C:\Users\Administrator\Desktop\2019年2月~对账模板-懒猫.xlsx'
 
 
 #确定商户有本月有几个收费项目
@@ -32,6 +32,7 @@ def  getbill(billpath,cellname_num,cellname_bill_1,sheetname):
     os.chdir(billpath)
     billfiles=os.listdir('.')
     billallcontent=[]
+    i=0
 
     #获取账单金额数据
     for  file in billfiles:
@@ -58,14 +59,20 @@ def  getbill(billpath,cellname_num,cellname_bill_1,sheetname):
 
           billcontent=wb.sheets[sheet_bill].range(cellrange).value
 
+          
+          print(billcontent)
+          print('\n')
+
           if isinstance(billcontent[0],list):
               billallcontent.extend(billcontent)
           else:
               billallcontent.append(billcontent)
 
-          print(billlistname+"处理完毕")
+          i+=1
 
-          wb.save()
+          print(str(i)+':'+billlistname+"处理完毕")
+
+          #wb.save()
           wb.close()
           exlapp.quit()
           #time.sleep(1)
